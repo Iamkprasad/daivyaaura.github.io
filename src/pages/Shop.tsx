@@ -1,7 +1,8 @@
 import { useState, useMemo } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import ProductCard from "@/components/shop/ProductCard";
-import { products, categories } from "@/data/products";
+import { categories } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 
@@ -12,6 +13,8 @@ export default function Shop() {
   const [sortBy, setSortBy] = useState("popularity");
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+
+  const { data: products = [], isLoading } = useProducts();
 
   const filtered = useMemo(() => {
     let list = selectedCategory === "All" ? [...products] : products.filter((p) => p.category === selectedCategory);
@@ -34,11 +37,17 @@ export default function Shop() {
       default: list.sort((a, b) => b.reviewCount - a.reviewCount);
     }
     return list;
-  }, [selectedCategory, sortBy, searchQuery]);
+  }, [selectedCategory, sortBy, searchQuery, products]);
 
   return (
     <section className="py-10 md:py-16">
       <div className="container">
+        {isLoading ? (
+          <div className="flex justify-center items-center min-h-[50vh]">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>
+        ) : (
+          <>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <span className="font-heading text-sm text-primary font-semibold uppercase tracking-[0.2em]">Our Collection</span>
           <h1 className="text-3xl md:text-4xl font-display font-bold mt-2 mb-2">
@@ -97,6 +106,8 @@ export default function Shop() {
           <p className="text-center text-muted-foreground py-20 font-body">
             {searchQuery ? `No products found for "${searchQuery}"` : "No products found in this category."}
           </p>
+        )}
+        </>
         )}
       </div>
     </section>

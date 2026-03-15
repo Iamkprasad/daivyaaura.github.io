@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBanner from "@/assets/hero-banner.jpg";
+import { useHero } from "@/hooks/useHero";
 
 export default function HeroSection() {
+  const { data: hero } = useHero();
+
   return (
     <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-center overflow-hidden bg-cosmic cosmic-particles">
       {/* Background image with dark overlay */}
       <div className="absolute inset-0">
-        <img src={heroBanner} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-30" />
+        {hero?.heroBanner && (
+            <img src={hero.heroBanner} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-30" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-r from-cosmic via-cosmic/90 to-cosmic/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-cosmic via-transparent to-cosmic/40" />
       </div>
@@ -37,12 +41,12 @@ export default function HeroSection() {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.15] mb-6">
-              Divine Energy for{" "}
-              <span className="text-gradient-gold">Your Spiritual</span>{" "}
-              Journey
+              {hero?.title || "Divine Energy for"}{" "}
+              <span className="text-gradient-gold">{hero?.highlight || "Your Spiritual"}</span>{" "}
+              {hero?.subtitle && hero.subtitle.replace(hero.highlight || "", "").trim() ? hero.subtitle.replace(hero.highlight || "", "").trim() : "Journey"}
             </h1>
             <p className="text-base md:text-lg text-primary-foreground/60 font-body mb-10 max-w-lg leading-relaxed">
-              Discover energized sprays, sacred tilaks, and wellness products crafted to bring prosperity, protection, and peace to your life.
+              {hero?.description || "Discover energized sprays, sacred tilaks, and wellness products crafted to bring prosperity, protection, and peace to your life."}
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-gradient-gold text-cosmic hover:opacity-90 font-display text-sm tracking-wider shadow-glow px-8 py-6">
@@ -87,7 +91,9 @@ export default function HeroSection() {
               
               {/* Center product showcase */}
               <div className="absolute inset-12 rounded-full overflow-hidden shadow-glow">
-                <img src={heroBanner} alt="Sacred products" className="w-full h-full object-cover" />
+                {hero?.heroBanner && (
+                    <img src={hero.heroBanner} alt="Sacred products" className="w-full h-full object-cover" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-cosmic/60 to-transparent" />
               </div>
 

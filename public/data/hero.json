@@ -1,12 +1,7 @@
 {
-  "hero": [
-    {
-      "title": "Divine Energy for Your Spiritual Journey",
-      "subtitle": "Discover energized sprays, sacred tilaks, and wellness products crafted to bring prosperity, protection, and peace to your life.",
-      "button_text": "Shop Now",
-      "button_link": "/shop",
-      "secondary_button_text": "Talk to Astrologer",
-      "secondary_button_link": "tel:+919911573173"
-    }
-  ]
+  "title": "Divine Energy for",
+  "subtitle": "Your Spiritual Journey",
+  "highlight": "Your Spiritual",
+  "description": "Discover energized sprays, sacred tilaks, and wellness products crafted to bring prosperity, protection, and peace to your life.",
+  "heroBanner": "/assets/hero-banner.jpg"
 }

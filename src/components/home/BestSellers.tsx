@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/shop/ProductCard";
+import { useProducts } from "@/hooks/useProducts";
 import { getBestsellers } from "@/data/products";
 import { motion } from "framer-motion";
 
 export default function BestSellers() {
-  const bestsellers = getBestsellers();
+  const { data: products = [] } = useProducts();
+  const bestsellers = getBestsellers(products);
 
   return (
     <section className="py-16 md:py-24">

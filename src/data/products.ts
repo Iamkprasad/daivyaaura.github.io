@@ -1,14 +1,3 @@
-import moneyAttractionSpray from "@/assets/products/money-attraction-spray.jpg";
-import businessBoosterSpray from "@/assets/products/business-booster-spray.jpg";
-import negativityRemovalSpray from "@/assets/products/negativity-removal-spray.jpg";
-import moneyAttractionTilak from "@/assets/products/money-attraction-tilak.jpg";
-import roadOpenerSpray from "@/assets/products/road-opener-spray.jpg";
-import studentsTilak from "@/assets/products/students-tilak.jpg";
-import healthTilak from "@/assets/products/health-tilak.jpg";
-import moneyRecoverySpray from "@/assets/products/money-recovery-spray.jpg";
-import camphorEssentialOil from "@/assets/products/camphor-essential-oil.jpg";
-import energisedMallikaDhooni from "@/assets/products/energised-mallika-dhooni.jpg";
-
 export type Product = {
   id: number;
   name: string;
@@ -33,254 +22,25 @@ export type Product = {
   tags: string[];
 };
 
-export const products: Product[] = [
-  {
-    id: 1,
-    name: "Money Attraction Spray",
-    slug: "money-attraction-spray",
-    category: "Sprays",
-    regularPrice: 699,
-    salePrice: 399,
-    discount: 43,
-    inStock: true,
-    sku: "DV-SPR-001",
-    image: moneyAttractionSpray,
-    shortDescription: "Energized spray for attracting wealth and prosperity",
-    fullDescription: "Our Money Attraction Spray is infused with powerful crystals and essential oils, carefully blessed and energized to attract financial abundance into your life. Use it daily to remove money blocks and invite prosperity.",
-    benefits: ["Attracts financial abundance", "Removes money blocks", "Enhances business opportunities", "Promotes positive energy"],
-    ingredients: "Rose water, essential oils, charged crystals, sacred herbs",
-    usage: "Spray in your wallet, cash register, or around your workspace",
-    size: "100ml",
-    rating: 4.8,
-    reviewCount: 127,
-    featured: true,
-    bestseller: true,
-    tags: ["spray", "money", "wealth", "prosperity", "bestseller"],
-  },
-  {
-    id: 2,
-    name: "Business Booster Spray",
-    slug: "business-booster-spray",
-    category: "Sprays",
-    regularPrice: 699,
-    salePrice: 399,
-    discount: 43,
-    inStock: true,
-    sku: "DV-SPR-002",
-    image: businessBoosterSpray,
-    shortDescription: "Boost your business energy and attract success",
-    fullDescription: "The Business Booster Spray is crafted with sacred herbs and crystal energies to enhance your professional growth. Ideal for entrepreneurs and business owners seeking expansion.",
-    benefits: ["Boosts business growth", "Attracts new clients", "Enhances professional confidence", "Clears stagnant energy"],
-    ingredients: "Essential oils, crystal-charged water, sacred botanicals",
-    usage: "Spray at your workplace entrance and around your desk",
-    size: "100ml",
-    rating: 4.7,
-    reviewCount: 98,
-    featured: true,
-    bestseller: true,
-    tags: ["spray", "business", "success", "growth"],
-  },
-  {
-    id: 3,
-    name: "Negativity Removal Spray",
-    slug: "negativity-removal-spray",
-    category: "Sprays",
-    regularPrice: 1059,
-    salePrice: 1059,
-    discount: 0,
-    inStock: true,
-    sku: "DV-SPR-003",
-    image: negativityRemovalSpray,
-    shortDescription: "Powerful cleanser to remove negative energies from your space",
-    fullDescription: "Our most powerful cleansing spray, designed to purify spaces from negative energies, evil eye, and spiritual blockages. Perfect for home and office use.",
-    benefits: ["Removes negative energy", "Protects against evil eye", "Purifies living spaces", "Creates peaceful atmosphere"],
-    ingredients: "Holy water, protective crystals, purifying essential oils, sacred ash",
-    usage: "Spray in all corners of your home, especially at entrances",
-    size: "100ml",
-    rating: 4.9,
-    reviewCount: 203,
-    featured: true,
-    bestseller: false,
-    tags: ["spray", "protection", "cleansing", "negativity"],
-  },
-  {
-    id: 4,
-    name: "Money Attraction Tilak",
-    slug: "money-attraction-tilak",
-    category: "Tilaks",
-    regularPrice: 300,
-    salePrice: 190,
-    discount: 37,
-    inStock: true,
-    sku: "DV-TLK-001",
-    image: moneyAttractionTilak,
-    shortDescription: "Sacred tilak infused with prosperity-attracting energies",
-    fullDescription: "This energized tilak is made with saffron, kumkum, and charged with powerful mantras to attract wealth and financial stability.",
-    benefits: ["Attracts wealth", "Activates third eye", "Enhances financial intuition", "Brings luck in money matters"],
-    ingredients: "Saffron, kumkum, sandalwood, charged crystal powder",
-    usage: "Apply on forehead before important financial decisions or daily worship",
-    size: "15g",
-    rating: 4.6,
-    reviewCount: 85,
-    featured: false,
-    bestseller: true,
-    tags: ["tilak", "money", "wealth", "traditional"],
-  },
-  {
-    id: 5,
-    name: "Road Opener Spray",
-    slug: "road-opener-spray",
-    category: "Sprays",
-    regularPrice: 699,
-    salePrice: 399,
-    discount: 43,
-    inStock: true,
-    sku: "DV-SPR-004",
-    image: roadOpenerSpray,
-    shortDescription: "Open new pathways and remove obstacles from your life",
-    fullDescription: "The Road Opener Spray is designed to clear blockages and open new pathways in life. Whether in career, relationships, or personal growth, this spray helps remove obstacles.",
-    benefits: ["Opens new opportunities", "Removes life obstacles", "Clears blocked paths", "Enhances decision-making"],
-    ingredients: "Essential oils, crystal-infused water, road-opening herbs",
-    usage: "Spray before leaving home or before important meetings",
-    size: "100ml",
-    rating: 4.7,
-    reviewCount: 112,
-    featured: true,
-    bestseller: false,
-    tags: ["spray", "opportunity", "path", "obstacles"],
-  },
-  {
-    id: 6,
-    name: "Students Tilak",
-    slug: "students-tilak",
-    category: "Tilaks",
-    regularPrice: 300,
-    salePrice: 190,
-    discount: 37,
-    inStock: true,
-    sku: "DV-TLK-002",
-    image: studentsTilak,
-    shortDescription: "Enhance focus, memory, and academic performance",
-    fullDescription: "Specially formulated for students, this tilak enhances concentration, memory retention, and academic performance through the power of sacred ingredients.",
-    benefits: ["Improves concentration", "Enhances memory", "Reduces exam anxiety", "Boosts academic performance"],
-    ingredients: "Brahmi extract, sandalwood, charged crystals, sacred herbs",
-    usage: "Apply on forehead before studying or exams",
-    size: "15g",
-    rating: 4.5,
-    reviewCount: 67,
-    featured: false,
-    bestseller: false,
-    tags: ["tilak", "students", "focus", "memory"],
-  },
-  {
-    id: 7,
-    name: "Health Tilak",
-    slug: "health-tilak",
-    category: "Tilaks",
-    regularPrice: 300,
-    salePrice: 190,
-    discount: 37,
-    inStock: true,
-    sku: "DV-TLK-003",
-    image: healthTilak,
-    shortDescription: "Promote healing and overall well-being",
-    fullDescription: "The Health Tilak is infused with healing herbs and energized crystals to promote physical well-being and spiritual healing.",
-    benefits: ["Promotes healing", "Boosts immunity spiritually", "Enhances well-being", "Balances body energies"],
-    ingredients: "Neem, turmeric, sandalwood, healing crystal powder",
-    usage: "Apply on forehead daily or during healing rituals",
-    size: "15g",
-    rating: 4.6,
-    reviewCount: 54,
-    featured: false,
-    bestseller: false,
-    tags: ["tilak", "health", "healing", "wellness"],
-  },
-  {
-    id: 8,
-    name: "Money Recovery Spray",
-    slug: "money-recovery-spray",
-    category: "Sprays",
-    regularPrice: 699,
-    salePrice: 399,
-    discount: 43,
-    inStock: true,
-    sku: "DV-SPR-005",
-    image: moneyRecoverySpray,
-    shortDescription: "Recover lost money and pending payments",
-    fullDescription: "This unique spray is designed to help recover lost money, pending payments, and debts. Charged with powerful energies focused on financial recovery.",
-    benefits: ["Helps recover debts", "Attracts pending payments", "Removes financial blockages", "Restores financial flow"],
-    ingredients: "Crystal-charged water, recovery herbs, essential oils",
-    usage: "Spray on documents, invoices, or areas related to pending finances",
-    size: "100ml",
-    rating: 4.8,
-    reviewCount: 91,
-    featured: false,
-    bestseller: true,
-    tags: ["spray", "money", "recovery", "debts"],
-  },
-  {
-    id: 9,
-    name: "Camphor Essential Oil",
-    slug: "camphor-essential-oil",
-    category: "Oils",
-    regularPrice: 199,
-    salePrice: 199,
-    discount: 0,
-    inStock: true,
-    sku: "DV-OIL-001",
-    image: camphorEssentialOil,
-    shortDescription: "Pure camphor oil for spiritual cleansing and meditation",
-    fullDescription: "100% pure camphor essential oil, perfect for spiritual rituals, meditation, and energy cleansing. Traditional Ayurvedic preparation for holistic wellness.",
-    benefits: ["Purifies environment", "Enhances meditation", "Natural air freshener", "Promotes clarity"],
-    ingredients: "100% pure camphor essential oil",
-    usage: "Add to diffuser or mix with carrier oil for topical use",
-    size: "30ml",
-    rating: 4.4,
-    reviewCount: 43,
-    featured: false,
-    bestseller: false,
-    tags: ["oil", "camphor", "meditation", "cleansing"],
-  },
-  {
-    id: 10,
-    name: "Energised Mallika Dhooni",
-    slug: "energised-mallika-dhooni",
-    category: "Wellness",
-    regularPrice: 599,
-    salePrice: 599,
-    discount: 0,
-    inStock: true,
-    sku: "DV-WEL-001",
-    image: energisedMallikaDhooni,
-    shortDescription: "Traditional aromatic incense for spiritual cleansing",
-    fullDescription: "Handcrafted and energized Mallika Dhooni, made from natural ingredients for powerful spiritual cleansing and creating a sacred atmosphere in your home.",
-    benefits: ["Deep spiritual cleansing", "Creates sacred atmosphere", "Natural aromatherapy", "Traditional wellness practice"],
-    ingredients: "Natural resins, sacred herbs, aromatic botanicals",
-    usage: "Burn on charcoal during prayer or meditation",
-    size: "100g",
-    rating: 4.7,
-    reviewCount: 76,
-    featured: false,
-    bestseller: false,
-    tags: ["wellness", "dhooni", "incense", "cleansing"],
-  },
-];
-
 export const categories = ["All", "Sprays", "Tilaks", "Oils", "Wellness"];
 
-export function getProductBySlug(slug: string): Product | undefined {
+export function getProductBySlug(products: Product[] | undefined, slug: string): Product | undefined {
+  if (!products) return undefined;
   return products.find((p) => p.slug === slug);
 }
 
-export function getProductsByCategory(category: string): Product[] {
+export function getProductsByCategory(products: Product[] | undefined, category: string): Product[] {
+  if (!products) return [];
   if (category === "All") return products;
   return products.filter((p) => p.category === category);
 }
 
-export function getFeaturedProducts(): Product[] {
+export function getFeaturedProducts(products: Product[] | undefined): Product[] {
+  if (!products) return [];
   return products.filter((p) => p.featured);
 }
 
-export function getBestsellers(): Product[] {
+export function getBestsellers(products: Product[] | undefined): Product[] {
+  if (!products) return [];
   return products.filter((p) => p.bestseller);
 }
