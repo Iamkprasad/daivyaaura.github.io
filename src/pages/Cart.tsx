@@ -39,7 +39,7 @@ export default function Cart() {
                 className="flex gap-4 p-4 bg-card rounded-lg border"
               >
                 <Link to={`/product/${item.product.slug}`} className="shrink-0">
-                  <img src={item.product.image} alt={item.product.name} className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md" />
+                  <img src={`${import.meta.env.BASE_URL}${item.product.image.startsWith('/') ? item.product.image.slice(1) : item.product.image}`} alt={item.product.name} className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md" />
                 </Link>
                 <div className="flex-1 min-w-0">
                   <Link to={`/product/${item.product.slug}`} className="font-heading font-semibold hover:text-primary transition-colors line-clamp-1">

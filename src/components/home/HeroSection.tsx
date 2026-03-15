@@ -12,7 +12,7 @@ export default function HeroSection() {
       {/* Background image with dark overlay */}
       <div className="absolute inset-0">
         {hero?.heroBanner && (
-            <img src={hero.heroBanner} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-30" />
+            <img src={`${import.meta.env.BASE_URL}${hero.heroBanner.startsWith('/') ? hero.heroBanner.slice(1) : hero.heroBanner}`} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-30" />
         )}
         <div className="absolute inset-0 bg-gradient-to-r from-cosmic via-cosmic/90 to-cosmic/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-cosmic via-transparent to-cosmic/40" />
@@ -92,7 +92,7 @@ export default function HeroSection() {
               {/* Center product showcase */}
               <div className="absolute inset-12 rounded-full overflow-hidden shadow-glow">
                 {hero?.heroBanner && (
-                    <img src={hero.heroBanner} alt="Sacred products" className="w-full h-full object-cover" />
+                    <img src={`${import.meta.env.BASE_URL}${hero.heroBanner.startsWith('/') ? hero.heroBanner.slice(1) : hero.heroBanner}`} alt="Sacred products" className="w-full h-full object-cover" />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-cosmic/60 to-transparent" />
               </div>

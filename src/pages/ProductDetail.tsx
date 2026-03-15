@@ -65,7 +65,7 @@ export default function ProductDetail() {
             animate={{ opacity: 1, x: 0 }}
             className="aspect-square rounded-xl overflow-hidden bg-muted border border-border/50 shadow-card"
           >
-            <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+            <img src={`${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`} alt={product.name} className="w-full h-full object-cover" />
           </motion.div>
 
           {/* Info */}

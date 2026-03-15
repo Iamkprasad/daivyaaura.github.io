@@ -26,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="bg-card rounded-xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-500 border border-border/50 hover:border-primary/30">
           <div className="relative aspect-square overflow-hidden bg-muted">
             <img
-              src={product.image}
+              src={`${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`}
               alt={product.name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
