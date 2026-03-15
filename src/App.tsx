@@ -28,7 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <CartProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/daivyaaura.github.io/">
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Header />
