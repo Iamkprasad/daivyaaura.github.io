@@ -12,10 +12,10 @@ export default function HeroSection() {
       {/* Background image with dark overlay */}
       <div className="absolute inset-0">
         {hero?.heroBanner && (
-            <img src={`${import.meta.env.BASE_URL}${hero.heroBanner.startsWith('/') ? hero.heroBanner.slice(1) : hero.heroBanner}`} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-30" />
+            <img src={`${import.meta.env.BASE_URL}${hero.heroBanner.startsWith('/') ? hero.heroBanner.slice(1) : hero.heroBanner}`} alt="Daivyaura spiritual products" className="w-full h-full object-cover opacity-60 md:opacity-40" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-cosmic via-cosmic/90 to-cosmic/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-cosmic via-transparent to-cosmic/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cosmic via-cosmic/70 to-cosmic/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cosmic/80 via-transparent to-cosmic/40" />
       </div>
 
       {/* Sacred geometry overlays */}
@@ -81,9 +81,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="hidden md:flex items-center justify-center relative"
+            className="flex items-center justify-center relative order-first md:order-last pt-8 md:pt-0"
           >
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               {/* Glowing rings */}
               <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse-glow" />
               <div className="absolute inset-4 rounded-full border border-primary/15 animate-pulse-glow" style={{ animationDelay: '1s' }} />
